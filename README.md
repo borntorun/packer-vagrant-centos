@@ -31,11 +31,13 @@ You will need the following software installed in your system:
 		- ... see ks.cfg to more...
     	
 	- To build the box
-		- $ cd x86_64 && packer validate packer.json && packer build packer.json
+		- $ cd x86_64
+		- $ packer validate packer.json
+		- $ packer build packer.json
 	
 	- To use the box
 		- Add the box to cloud or some path
-		- $ vagrant box add --name <name> <path|url>Centos7-devel-x86_64.box
+		- $ vagrant box add [--name \<name>] \<path|url>Centos7-devel-x86_64.box
 	
 	- Note to Windows Users
 		- Due to an error when buildind VirtualBox guest additions on CentOS 7: "ERROR: Kernel configuration is invalid." the most safe way I discovered was to use VirtualBox guest additions v.4.3.14 on VirtualBox 4.3.12.
