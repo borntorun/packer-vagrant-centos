@@ -34,7 +34,11 @@ You will need the following software installed in your system:
 		- $ cd x86_64
 		- $ packer validate packer.json
 		- $ packer build packer.json
-	
+		
+			- Note: 
+				- The build uses a portuguese mirror for the netinstall iso.
+				- Change variables in packer.json for other configs "iso_url_netinstall" and "iso_url_checksum"
+				
 	- To use the box
 		- Add the box to cloud or some path
 		- $ vagrant box add [--name \<name>] \<path|url>Centos7-devel-x86_64.box
