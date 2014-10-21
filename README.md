@@ -21,6 +21,8 @@ You will need the following software installed in your system:
 ### How to use
 	
 * Centos7-devel-x86_64
+    - Guest system CentOS 7 - 64 bit
+
 	- Packages installed plus from core: @base @perl-runtime @ruby-runtime @development 
 	
 	- To use the box
@@ -29,15 +31,16 @@ You will need the following software installed in your system:
 		
 		$ vagrant box add --name <name> <path|url>Centos7-devel-x86_64.box
 ```	
-	
-	- To build the box
+    - To build the box
 ```	
 		$ cd x86_64 && packer validate packer.json && packer build packer.json
 ```	
-	- Note Windows Users
-		- VirtualBox guest additions 4.3.14 were used due to a ERROR: Kernel configuration is invalid. when building the 4.3.12 version. Of course you can install a newer version of virtual box and see what happens...
+    - Note Windows Users
+		- Due to an error when buildind VirtualBox guest additions on CentOS 7: "ERROR: Kernel configuration is invalid." the most safe way I discovered was to use VirtualBox guest additions v.4.3.14 on VirtualBox 4.3.12.
 		- [See here] (https://forums.virtualbox.org/viewtopic.php?f=3&t=62485&start=15#p298960)
-		- [Download iso VB guest additions] (http://download.virtualbox.org/virtualbox/)
+		- [Download iso VB guest additions] (http://download.virtualbox.org/virtualbox/) and put the iso in <path_to_vitualbox_install> usually C:/Program Files/Oracle/VirtualBox
+        - Later when build/update a vm you will receive a message that versions (host/guest) are not the same, but you can ignore it.
+        - Of course you can install a newer version of VirtualBox on host system and see what happens...
 
 
 ### Author
