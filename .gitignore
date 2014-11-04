@@ -1,9 +1,5 @@
-# Cache objects
+/.idea/*
 packer_cache/
-
-# For built boxes
 *.box
-
 log
-
 .run

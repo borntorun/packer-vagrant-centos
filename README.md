@@ -1,6 +1,6 @@
 # packer-vagrant-centos
 
-Packer template(s) for creating CentOS VirtualBox machines for unnatended instalations exporting as Vagrant boxes
+Packer template(s) for creating CentOS 7 VirtualBox machines for unnatended instalations exporting as Vagrant boxes
 <hr>
 
 ### Requirements
@@ -11,13 +11,14 @@ You will need the following software installed in your system:
   - [Vagrant](http://www.vagrantup.com/)
   - [VirtualBox](https://www.virtualbox.org/)
 	
-### Host system(s) and Versions used
+### Host system and software versions used
 	
-	Windows 7
+	Windows 7 Professional 64 bit
 	Packer v0.7.1
 	VirtualBox 4.3.12 r.93733
 	Vagrant 1.6.5
-
+	
+	
 ### How to use
 	
 * Centos7-devel-x86_64
@@ -44,7 +45,7 @@ You will need the following software installed in your system:
 		- $ vagrant box add [--name \<name>] \<path|url>Centos7-devel-x86_64.box
 	
 	- Note to Windows Users
-		- Due to an error when buildind VirtualBox guest additions on CentOS 7: "ERROR: Kernel configuration is invalid." the most safe way I discovered was to use VirtualBox guest additions v.4.3.14 on VirtualBox 4.3.12.
+		- Due to an error when buildind VirtualBox 4.3.12 guest additions on CentOS 7: "ERROR: Kernel configuration is invalid." the most safe way I discovered was to use VirtualBox guest additions v.4.3.14 on VirtualBox 4.3.12.
 		- [See here](https://forums.virtualbox.org/viewtopic.php?f=3&t=62485&start=15#p298960)
 		- [Download iso VB guest additions](http://download.virtualbox.org/virtualbox/) and put the iso in <path_to_vitualbox_install> usually C:/Program Files/Oracle/VirtualBox
 		- Later when build/update a vm you will receive a message that versions (host/guest) are not the same, but you can ignore it.
