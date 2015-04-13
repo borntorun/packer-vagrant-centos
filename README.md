@@ -49,7 +49,7 @@ Or...
 after cd to environment folder (cd x86_64)
 
 ```
-packer build [-var ksfile=\<devel|minimal|graphic\>] packer.json
+packer build [-var ksfile=<devel|minimal|graphic>] packer.json
 ```
 
 To buid the default box (devel):
@@ -82,7 +82,7 @@ The CentOS 7 (1503) is used (major release@11-April-2015)
 
 Add the box to cloud or some path
 
-Syntax: vagrant box add [--name \<name>] \<path|url>Centos7-\<devel|minimal\>-x86_64.box
+Syntax: vagrant box add [--name \<name>] \<path|url\>Centos7-\<devel|minimal\>-x86_64.box
 
 ```
 $ vagrant box add --name theboxname <path|url>Centos7-minimal-x86_64.box
