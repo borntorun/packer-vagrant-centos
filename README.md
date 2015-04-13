@@ -21,7 +21,7 @@ You will need the following software installed in your system:
 
 ### How to use
 
-###### Two boxes may be created from two different kickstart files
+###### 3 boxes may be created from two different kickstart files
   
 * **devel** (ks-devel.cfg) 
 
@@ -41,7 +41,7 @@ You will need the following software installed in your system:
 Fast way script:
 
 ```
-chmod +x .run && .run x86_64 \<devel|minimal|graphic\>
+chmod +x .run && .run x86_64 <devel|minimal|graphic>
 ```
 
 Or... 
