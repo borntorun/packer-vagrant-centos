@@ -31,9 +31,26 @@ You will need the following software installed in your system:
 
 	- The **minimal** Environment of CentOS, plus some necessary packages for provisioning and installing other software. 
 
+* **graphic** (ks-graphic.cfg) 
+
+	- The **graphic** box with developement install and GNome desktop. 
+
+
 ###### To build the box
 
-syntax: packer build [-var ksfile=\<devel|minimal\>] packer.json
+Fast way script:
+
+```
+chmod +x .run && .run x86_64 \<devel|minimal|graphic\>
+```
+
+Or... 
+
+after cd to environment folder (cd x86_64)
+
+```
+packer build [-var ksfile=\<devel|minimal|graphic\>] packer.json
+```
 
 To buid the default box (devel):
 ```
@@ -48,8 +65,18 @@ $ packer validate -var ksfile=minimal packer.json #just to test syntax of templa
 $ packer build -var ksfile=minimal packer.json
 $ packer build packer.json
 ```
+To buid the graphic box (devel):
+```
+$ cd x86_64
+$ packer validate -var ksfile=graphic packer.json #just to test syntax of template
+$ packer build -var ksfile=graphic packer.json
+$ packer build packer.json
+```
 
-**Note:** The build uses a portuguese mirror for the netinstall iso. Change variables in packer.json for other configs "iso_url_netinstall" and "iso_url_checksum".
+**Note:** 
+
+The build uses a portuguese mirror for the netinstall iso. Change variables in packer.json for other configs "iso_url_netinstall" and "iso_url_checksum".
+The CentOS 7 (1503) is used (major release@11-April-2015) 
 
 ###### To use the box
 

@@ -2,8 +2,8 @@
   "variables": {
     "ssh_name": "vagrant",
     "ssh_pass": "vagrant",
-	"iso_url_netinstall": "http://ftp.dei.uc.pt/pub/linux/CentOS/7.0.1406/isos/x86_64/CentOS-7.0-1406-x86_64-NetInstall.iso",
-	"iso_url_checksum": "96de4f38a2f07da51831153549c8bd0c",
+	"iso_url_netinstall": "http://ftp.dei.uc.pt/pub/linux/CentOS/7.1.1503/isos/x86_64/CentOS-7-x86_64-NetInstall-1503.iso",
+	"iso_url_checksum": "111379a06402e1e445c6aeee9401d031",
 	"ksfile": "devel"
   },
   "builders": [
@@ -17,11 +17,11 @@
       "ssh_username": "{{user `ssh_pass`}}",
       "ssh_wait_timeout": "50000s",
       "headless": "false",
-	  "disk_size": "20000",
+	  "disk_size": "40000",
 	  "guest_additions_mode": "upload",
       "vboxmanage": [
-        ["modifyvm", "{{.Name}}", "--memory", "1024"],
-        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+        ["modifyvm", "{{.Name}}", "--memory", "2048"],
+        ["modifyvm", "{{.Name}}", "--cpus", "2"]
       ],
       "http_directory": ".",
       "boot_command": [
@@ -29,7 +29,7 @@
       ],
       "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S /sbin/halt -h -p"
     }
-  ], 
+  ],
   "provisioners": [
     {
       "override": {
@@ -41,11 +41,11 @@
 		"vagrantvisudo.sh",
         "vagrant.sh",
 		"virtualbox.sh",
-		"cleanup.sh"		
+		"cleanup.sh"
       ],
       "type": "shell"
-    }    
-  ],  
+    }
+  ],
   "post-processors": [
     {
       "type": "vagrant",

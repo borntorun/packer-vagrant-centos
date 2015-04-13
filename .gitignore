@@ -2,4 +2,3 @@
 packer_cache/
 *.box
 log
-.run

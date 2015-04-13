@@ -1,0 +1,29 @@
+#!/bin/bash
+IFS="$(printf '\n\t')"
+
+case $1 in
+	"x86_64")
+		cd $1
+		;;
+	*)
+		printf "Error in parameters"
+		exit 1
+esac
+
+ksfile=$2
+[[ -z $ksfile ]] && ksfile="devel"
+echo $ksfile
+
+case $ksfile in
+	"minimal"|"devel"|"graphic")
+		[[ -e ./ks-$ksfile.cfg ]] && {
+			packer validate -var ksfile=$ksfile packer.json
+			[[ $? -eq 0 ]] && packer build -var ksfile=$ksfile packer.json
+			exit $?
+		} || printf "File [./$1/ks-$ksfile.cfg] does not exists."
+		;;
+	*)
+		printf "Error in parameters"
+		exit 1
+esac
+
