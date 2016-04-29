@@ -2,11 +2,11 @@
 IFS="$(printf '\n\t')"
 
 case $1 in
-	"x86_64")
+	"x86_64"|"x86_64/")
 		cd $1
 		;;
 	*)
-		printf "Error in parameters"
+		printf "Error 1 in parameters"
 		exit 1
 esac
 
@@ -23,7 +23,7 @@ case $ksfile in
 		} || printf "File [./$1/ks-$ksfile.cfg] does not exists."
 		;;
 	*)
-		printf "Error in parameters"
+		printf "Error 2 in parameters"
 		exit 1
 esac
 
