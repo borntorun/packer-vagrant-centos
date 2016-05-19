@@ -6,7 +6,7 @@ case $1 in
 		cd $1
 		;;
 	*)
-		printf "Error 1 in parameters"
+		printf ".run x86_64"
 		exit 1
 esac
 
